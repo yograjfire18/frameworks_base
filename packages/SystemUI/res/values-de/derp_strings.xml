@@ -26,6 +26,9 @@
     <string name="accessibility_quick_settings_sync_off">Synchronisierung aus.</string>
     <string name="accessibility_quick_settings_sync_on">Synchronisierung an.</string>
 
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB-Tethering</string>
+
     <!-- Status bar -->
     <string name="status_bar_icons_title">Statusleistensymbole</string>
 </resources>
