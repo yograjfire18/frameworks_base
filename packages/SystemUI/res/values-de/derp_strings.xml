@@ -11,6 +11,11 @@
     <string name="accessibility_quick_settings_caffeine_off">Koffein aus.</string>
     <string name="accessibility_quick_settings_caffeine_on">Koffein an.</string>
 
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Pop-up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Pop-up aus.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Pop-up an.</string>
+
     <!-- Status bar -->
     <string name="status_bar_icons_title">Statusleistensymbole</string>
 </resources>
