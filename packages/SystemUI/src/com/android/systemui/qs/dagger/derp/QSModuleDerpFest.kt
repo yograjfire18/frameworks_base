@@ -25,6 +25,7 @@ import com.android.systemui.qs.tiles.UsbTetherTile
 import com.android.systemui.qs.tiles.AODTile
 import com.android.systemui.qs.tiles.SoundSearchTile
 import com.android.systemui.qs.tiles.CaffeineTile
+import com.android.systemui.qs.tiles.VolumeTile
 import com.android.systemui.qs.tiles.VpnTile
 import com.android.systemui.qs.tiles.VPNTetheringTile
 import com.android.systemui.qs.tiles.RebootTile
@@ -171,4 +172,10 @@ interface QSModuleDerpFest {
     @IntoMap
     @StringKey(ReadingModeTile.TILE_SPEC)
     fun bindReadingModeTile(readingModeTile: ReadingModeTile): QSTileImpl<*>
+
+    /** Inject VolumeTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(VolumeTile.TILE_SPEC)
+    fun bindVolumeTile(volumeTile: VolumeTile): QSTileImpl<*>
 }
