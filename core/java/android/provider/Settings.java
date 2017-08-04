@@ -7052,6 +7052,12 @@ public final class Settings {
         public static final String ADAPTIVE_PLAYBACK_TIMEOUT = "adaptive_playback_timeout";
 
         /**
+         * Sensor block per-package
+         * @hide
+         */
+        public static final String SENSOR_BLOCK = "sensor_block";
+
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
@@ -7195,6 +7201,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DEFAULT_DEVICE_FONT_SCALE);
             PRIVATE_SETTINGS.add(TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK);
             PRIVATE_SETTINGS.add(AUTO_BRIGHTNESS_ONE_SHOT);
+            PRIVATE_SETTINGS.add(SENSOR_BLOCK);
         }
 
         /**
