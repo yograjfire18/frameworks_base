@@ -66,6 +66,7 @@ import com.android.app.animation.Interpolators;
 import com.android.app.viewcapture.ViewCaptureFactory;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.settingslib.Utils;
+import com.android.systemui.Dependency;
 import com.android.systemui.Gefingerpoken;
 import com.android.systemui.model.SysUiState;
 import com.android.systemui.navigationbar.buttons.ButtonDispatcher;
@@ -97,7 +98,8 @@ import java.util.concurrent.Executor;
 import java.util.function.Consumer;
 
 /** */
-public class NavigationBarView extends FrameLayout {
+public class NavigationBarView extends FrameLayout
+        implements NavigationModeController.ModeChangedListener {
     final static boolean DEBUG = false;
     final static String TAG = "NavBarView";
 
@@ -351,6 +353,9 @@ public class NavigationBarView extends FrameLayout {
                 setNavigationIconHints(mNavigationIconHints);
             }
         };
+
+        final NavigationModeController controller = Dependency.get(NavigationModeController.class);
+        controller.addListener(this);
     }
 
     public void setEdgeBackGestureHandler(EdgeBackGestureHandler edgeBackGestureHandler) {
@@ -872,6 +877,14 @@ public class NavigationBarView extends FrameLayout {
         mRotationButtonController.onNavigationModeChanged(mNavBarMode);
         updateRotationButton();
     }
+
+    @Override
+    public void onNavigationHeightChanged() {
+        mEdgeBackGestureHandler.onNavigationHeightChanged();
+    }
+
+    @Override
+    public void onNavigationModeChanged(int mode) { /* Do nothing */ }
 
     public void setAccessibilityButtonState(final boolean visible, final boolean longClickable) {
         mLongClickableAccessibilityButton = longClickable;
