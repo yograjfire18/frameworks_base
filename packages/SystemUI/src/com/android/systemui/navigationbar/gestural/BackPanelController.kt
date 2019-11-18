@@ -26,6 +26,7 @@ import android.os.VibrationEffect
 import android.util.Log
 import android.util.MathUtils
 import android.view.Gravity
+import android.view.View
 import android.view.MotionEvent
 import android.view.VelocityTracker
 import android.view.ViewConfiguration
@@ -159,6 +160,8 @@ class BackPanelController internal constructor(
     private var hasPassedDragSlop = false
 
     private val failsafeRunnable = Runnable { onFailsafe() }
+
+    private var mBackArrowVisibility = true
 
     private var mLongSwipeThreshold = 0f
     private var mTriggerLongSwipe = false
@@ -448,7 +451,11 @@ class BackPanelController internal constructor(
         }
 
         updateArrowStateOnMove(yTranslation, xTranslation)
-
+        if (mBackArrowVisibility) {
+           mView.setVisibility(View.VISIBLE)
+        } else {
+           mView.setVisibility(View.INVISIBLE)
+        }
         val gestureProgress = when (currentState) {
             GestureState.ACTIVE -> fullScreenProgress(xTranslation)
             GestureState.ENTRY -> staticThresholdProgress(xTranslation)
@@ -946,6 +953,10 @@ class BackPanelController internal constructor(
 //                mainHandler.postDelayed(10L) { vibratorHelper.cancel() }
             }
         }
+    }
+
+    override fun setBackArrowVisibility(backArrowVisibility : Boolean) {
+        mBackArrowVisibility = backArrowVisibility;
     }
 
     private fun convertVelocityToSpringStartingVelocity(
