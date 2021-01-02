@@ -9157,12 +9157,12 @@ public class Notification implements Parcelable
                 if (icon == null) {
                     throw new NullPointerException("Bubbles require non-null icon");
                 }
-                if (icon.getType() != TYPE_URI_ADAPTIVE_BITMAP
+                /* if (icon.getType() != TYPE_URI_ADAPTIVE_BITMAP
                         && icon.getType() != TYPE_URI) {
                     Log.w(TAG, "Bubbles work best with icons of TYPE_URI or "
                             + "TYPE_URI_ADAPTIVE_BITMAP. "
                             + "In the future, using an icon of this type will be required.");
-                }
+                } */
                 mPendingIntent = intent;
                 mIcon = icon;
             }
@@ -9197,12 +9197,12 @@ public class Notification implements Parcelable
                 if (icon == null) {
                     throw new IllegalArgumentException("Bubbles require non-null icon");
                 }
-                if (icon.getType() != TYPE_URI_ADAPTIVE_BITMAP
+                /* if (icon.getType() != TYPE_URI_ADAPTIVE_BITMAP
                         && icon.getType() != TYPE_URI) {
                     Log.w(TAG, "Bubbles work best with icons of TYPE_URI or "
                             + "TYPE_URI_ADAPTIVE_BITMAP. "
                             + "In the future, using an icon of this type will be required.");
-                }
+                } */
                 mShortcutId = null;
                 mPendingIntent = intent;
                 mIcon = icon;
@@ -9259,12 +9259,12 @@ public class Notification implements Parcelable
                 if (icon == null) {
                     throw new NullPointerException("Bubbles require non-null icon");
                 }
-                if (icon.getType() != TYPE_URI_ADAPTIVE_BITMAP
+                /* if (icon.getType() != TYPE_URI_ADAPTIVE_BITMAP
                         && icon.getType() != TYPE_URI) {
                     Log.w(TAG, "Bubbles work best with icons of TYPE_URI or "
                             + "TYPE_URI_ADAPTIVE_BITMAP. "
                             + "In the future, using an icon of this type will be required.");
-                }
+                } */
                 mIcon = icon;
                 return this;
             }
