@@ -88,6 +88,7 @@ public class GlobalSettings {
         Settings.Global.WAKELOCK_BLOCKING_ENABLED,
         Settings.Global.WAKELOCK_BLOCKING_LIST,
         Settings.Global.ALARM_BLOCKING_ENABLED,
-        Settings.Global.ALARM_BLOCKING_LIST
+        Settings.Global.ALARM_BLOCKING_LIST,
+        Settings.Global.WIFI_OFF_TIMEOUT
     };
 }
