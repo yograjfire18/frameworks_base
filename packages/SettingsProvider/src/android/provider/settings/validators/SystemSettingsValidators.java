@@ -1,4 +1,4 @@
-/*
+ /*
  * Copyright (C) 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -249,6 +249,7 @@ public class SystemSettingsValidators {
         VALIDATORS.put(System.ACCELEROMETER_ROTATION_ANGLES, NON_NEGATIVE_INTEGER_VALIDATOR);
         VALIDATORS.put(System.LOCKSCREEN_ROTATION, BOOLEAN_VALIDATOR);
         VALIDATORS.put(System.RINGTONE_VIBRATION_PATTERN, new InclusiveIntegerRangeValidator(0, 5));
+        VALIDATORS.put(System.USE_OLD_MOBILETYPE, BOOLEAN_VALIDATOR);
         VALIDATORS.put(System.CUSTOM_RINGTONE_VIBRATION_PATTERN,
                  new ListValidator(",") {
 
