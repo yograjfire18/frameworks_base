@@ -7782,6 +7782,17 @@ public final class Settings {
                 "global_actions_panel_debug_enabled";
 
         /**
+         * Int value specifying the power menu type (default is 0)
+         * 0 - Lite
+         * 1 - Full
+         * 2 - Classic
+         * 3 - Grid
+         * 4 - Legacy
+         * @hide
+         */
+        public static final String POWER_MENU_TYPE = "power_menu_type";
+
+        /**
          * Whether the hush gesture has ever been used
          * @hide
          */
@@ -10365,12 +10376,9 @@ public final class Settings {
          * 0 indicates disabled and 1 indicates enabled. A non existent value should be treated as
          * enabled.
          *
-         * @deprecated Controls are migrated to Quick Settings, rendering this unnecessary and will
-         *             be removed in a future release.
          * @hide
          */
         @Readable
-        @Deprecated
         public static final String CONTROLS_ENABLED = "controls_enabled";
 
         /**
