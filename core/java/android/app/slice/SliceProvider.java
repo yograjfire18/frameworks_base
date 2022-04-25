@@ -520,7 +520,7 @@ public abstract class SliceProvider extends ContentProvider {
                 com.android.internal.R.string.config_slicePermissionComponent)));
         intent.putExtra(EXTRA_BIND_URI, sliceUri);
         intent.putExtra(EXTRA_PKG, callingPackage);
-        intent.putExtra(EXTRA_PROVIDER_PKG, context.getPackageName());
+	intent.putExtra(EXTRA_PROVIDER_PKG, context.getPackageName());
         // Unique pending intent.
         intent.setData(sliceUri.buildUpon().appendQueryParameter("package", callingPackage)
                 .build());
