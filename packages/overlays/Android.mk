@@ -40,11 +40,11 @@ LOCAL_REQUIRED_MODULES := \
 	IconPackCircularSettingsOverlay \
 	IconPackCircularSystemUIOverlay \
 	IconPackCircularThemePickerOverlay \
-        IconPackPUIAndroidOverlay \
-        IconPackPUILauncherOverlay \
-        IconPackPUISettingsOverlay \
-        IconPackPUISystemUIOverlay \
-        IconPackPUIThemePickerOverlay \
+	IconPackPUIAndroidOverlay \
+	IconPackPUILauncherOverlay \
+	IconPackPUISettingsOverlay \
+	IconPackPUISystemUIOverlay \
+	IconPackPUIThemePickerOverlay \
 	IconPackVictorAndroidOverlay \
     IconPackVictorLauncherOverlay \
     IconPackVictorSettingsOverlay \
@@ -81,21 +81,26 @@ LOCAL_REQUIRED_MODULES := \
 	IconShapeTeardropOverlay \
 	IconShapeVesselOverlay \
 	NavigationBarMode2ButtonOverlay \
-        IconPackOOSAndroidOverlay \
-        IconPackOOSSystemUIOverlay \
-        IconPackOOSAndroidOverlay \
-        IconPackOOSLauncherOverlay \
-        IconPackOOSSettingsOverlay \
-        IconPackOOSSystemUIOverlay \
-        IconPackOOSThemePickerOverlay \
-        IconPackAcherusAndroidOverlay \
-        IconPackAcherusSystemUIOverlay \
-        IconPackOutlineAndroidOverlay \
-        IconPackOutlineSettingsOverlay \
-        IconPackOutlineSystemUIOverlay \
-        IconPackDoraAndroidOverlay \
-        IconPackDoraSettingsOverlay \
-        IconPackDoraSystemUIOverlay \
+	IconPackOOSAndroidOverlay \
+	IconPackOOSLauncherOverlay \
+	IconPackOOSSettingsOverlay \
+	IconPackOOSSystemUIOverlay \
+	IconPackOOSThemePickerOverlay \
+	IconPackAcherusAndroidOverlay \
+	IconPackAcherusLauncherOverlay \
+	IconPackAcherusSettingsOverlay \
+	IconPackAcherusSystemUIOverlay \
+	IconPackAcherusThemePickerOverlay \
+	IconPackOutlineAndroidOverlay \
+	IconPackOutlineLauncherOverlay \
+	IconPackOutlineSettingsOverlay \
+	IconPackOutlineSystemUIOverlay \
+	IconPackOutlineThemePickerOverlay \
+	IconPackDoraAndroidOverlay \
+	IconPackDoraLauncherOverlay \
+	IconPackDoraSettingsOverlay \
+	IconPackDoraSystemUIOverlay \
+	IconPackDoraThemePickerOverlay \
 	NavigationBarMode3ButtonOverlay \
 	NavigationBarModeGesturalOverlay \
 	NavigationBarModeGesturalOverlayNarrowBack \
