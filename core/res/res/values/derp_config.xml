@@ -270,4 +270,7 @@
 
     <!-- Whether or not we should show vendor mismatch message -->
     <bool name="config_show_vendor_mismatch_message">false</bool>
+
+    <!-- Whether to use Richtap vibration -->
+    <bool name="config_usesRichtapVibration">false</bool>
 </resources>
