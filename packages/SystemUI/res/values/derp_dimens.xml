@@ -104,4 +104,11 @@
 
     <!-- QS Header height full -->
     <dimen name="qs_header_height_full">200dp</dimen>
+
+    <!-- Old style mobile data indicators -->
+    <dimen name="status_bar_mobile_signal_with_type_height">18dp</dimen>
+    <dimen name="status_bar_mobile_signal_with_type_width">18dp</dimen>
+    <dimen name="status_bar_mobile_signal_width">16dp</dimen>
+    <dimen name="status_bar_mobile_type_height">9dp</dimen>
+    <dimen name="status_bar_mobile_type_width">12dp</dimen>
 </resources>

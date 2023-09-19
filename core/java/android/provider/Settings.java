@@ -6309,6 +6309,11 @@ public final class Settings {
         public static final String LOCKSCREEN_BATTERY_INFO_TEMP_UNIT = "lockscreen_charge_temp_unit";
 
         /**
+         * @hide
+         */
+        public static final String USE_OLD_MOBILETYPE = "use_old_mobiletype";
+
+        /**
          * Whether to display 4G icon instead LTE
          * @hide
          */
