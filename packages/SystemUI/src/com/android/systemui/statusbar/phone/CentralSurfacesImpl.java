@@ -540,7 +540,6 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces, Tune
     private final TunerService mTunerService;
 
     protected GameSpaceManager mGameSpaceManager;
-    private DerpSettingsObserver mDerpSettingsObserver;
 
     private final PulseControllerImpl mPulseController;
     private VisualizerView mVisualizerView;
@@ -955,8 +954,6 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces, Tune
         mActivityLaunchAnimator = activityLaunchAnimator;
         mGameSpaceManager = new GameSpaceManager(mContext, mKeyguardStateController);
 
-        mDerpSettingsObserver = new DerpSettingsObserver(backgroundHandler);
-
         // The status bar background may need updating when the ongoing call status changes.
         mOngoingCallController.addCallback((animate) -> maybeUpdateBarMode());
 
@@ -1074,9 +1071,6 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces, Tune
 
         // Set up the initial notification state. This needs to happen before CommandQueue.disable()
         setUpPresenter();
-
-        mDerpSettingsObserver.observe();
-        mDerpSettingsObserver.update();
 
         if (containsType(result.mTransientBarTypes, ITYPE_STATUS_BAR)) {
             showTransientUnchecked();
@@ -2212,55 +2206,6 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces, Tune
 
         AnimateExpandSettingsPanelMessage(String subpanel) {
             mSubpanel = subpanel;
-        }
-    }
-
-    private class DerpSettingsObserver extends ContentObserver {
-        private final Handler mBackgroundHandler;
-
-        DerpSettingsObserver(Handler backgroundHandler) {
-            super(backgroundHandler);
-            mBackgroundHandler = backgroundHandler;
-        }
-
-        void observe() {
-            mSystemSettings.registerContentObserverForUser(Settings.System.LESS_BORING_HEADS_UP, this, UserHandle.USER_ALL);
-            mSystemSettings.registerContentObserverForUser(Settings.System.RETICKER_STATUS, this, UserHandle.USER_ALL);
-        }
-
-        @Override
-        public void onChange(boolean selfChange, Uri uri) {
-            switch (uri.getLastPathSegment()) {
-                case Settings.System.LESS_BORING_HEADS_UP:
-                    setUseLessBoringHeadsUp();
-                    break;
-                case Settings.System.RETICKER_STATUS:
-                    setUseLessBoringHeadsUp();
-                    break;
-            }
-        }
-
-        void update() {
-            mBackgroundHandler.post(() -> {
-                setUseLessBoringHeadsUp();
-                setRetickerStatus();
-        });
-    }
-
-        private void setUseLessBoringHeadsUp() {
-            final boolean lessBoringHeadsUp = mSystemSettings.getIntForUser(
-                    Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT) == 1;
-            mMainHandler.post(() -> {
-                mNotificationInterruptStateProvider.setUseLessBoringHeadsUp(lessBoringHeadsUp);
-            });
-        }
-
-        private void setRetickerStatus() {
-            final boolean reTicker = mSystemSettings.getIntForUser(
-                    Settings.System.RETICKER_STATUS, 0, UserHandle.USER_CURRENT) == 1;
-            mMainHandler.post(() -> {
-                mNotificationInterruptStateProvider.setUseReticker(reTicker);
-            });
         }
     }
 
