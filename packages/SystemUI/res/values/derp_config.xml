@@ -70,8 +70,9 @@
          before the screen has had chance to switch out of HBM mode -->
     <integer name="config_udfpsDimmingDisableDelay">0</integer>
 
-    <!-- Boring headsup whitelist -->
-    <string-array name="heads_up_whitelist_packages">
+    <!-- The list of packages that are allowed to show headsup when using
+         Boring headsup mode -->
+    <string-array name="config_boringHeadsUpPackageAllowList">
         <item>com.android.dialer</item>
         <item>com.google.android.dialer</item>
         <item>dialer</item>
