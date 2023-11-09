@@ -179,12 +179,16 @@ public class PixelPropsUtils {
                 if (was) return true;
 
                 dlog("Spoofing build for GMS");
-                // Alter build parameters to pixel 2 for avoiding hardware attestation enforcement
-                setBuildField("DEVICE", "walleye");
-                setBuildField("FINGERPRINT", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
-                setBuildField("MODEL", "Pixel 2");
-                setBuildField("PRODUCT", "walleye");
-                setVersionField("DEVICE_INITIAL_SDK_INT", Build.VERSION_CODES.O);
+                // Alter build parameters to avoid hardware attestation enforcement
+                setBuildField("BRAND", "Asus");
+                setBuildField("PRODUCT", "WW_Phone");
+                setBuildField("MODEL", "ASUS_X00HD");
+                setBuildField("MANUFACTURER", "Asus");
+                setBuildField("DEVICE", "ASUS_X00HD_4");
+                setBuildField("FINGERPRINT", "asus/WW_Phone/ASUS_X00HD_4:7.1.1/NMF26F/14.2016.1801.372-20180119:user/release-keys");
+                setBuildField("ID", "NMF26F");
+                setBuildField("TYPE", "user");
+                setBuildField("TAGS", "release-keys");
                 return true;
             }
         }
@@ -270,23 +274,6 @@ public class PixelPropsUtils {
             field.setAccessible(false);
         } catch (NoSuchFieldException | IllegalAccessException e) {
             Log.e(TAG, "Failed to spoof Build." + key, e);
-        }
-    }
-
-    private static void setVersionField(String key, Object value) {
-        try {
-            // Unlock
-            if (DEBUG) Log.d(TAG, "Defining version field " + key + " to " + value.toString());
-            Field field = Build.VERSION.class.getDeclaredField(key);
-            field.setAccessible(true);
-
-            // Edit
-            field.set(null, value);
-
-            // Lock
-            field.setAccessible(false);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            Log.e(TAG, "Failed to set version field " + key, e);
         }
     }
 
