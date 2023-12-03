@@ -658,6 +658,9 @@ public final class ParallelSpaceManagerService extends SystemService {
                 Binder.restoreCallingIdentity(token);
             }
         }
+
+        @Override
+        public List<String>getDefaultClonedApps() { return SPACE_WHITELIST_PACKAGES; }
     }
 
     private final class UserReceiver extends BroadcastReceiver {
