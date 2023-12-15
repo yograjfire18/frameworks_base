@@ -181,11 +181,12 @@ public class PixelPropsUtils {
 
                 dlog("Spoofing build for GMS");
                 // Alter build parameters to avoid hardware attestation enforcement
-                setBuildField("PRODUCT", "bullhead");
-                setBuildField("MODEL", "Nexus 5X");
-                setBuildField("DEVICE", "bullhead");
-                setBuildField("FINGERPRINT", "google/bullhead/bullhead:8.0.0/OPR6.170623.013/4283548:user/release-keys");
-                setBuildField("ID", "OPR6.170623.013");
+                setBuildField("BRAND", "GIONEE");
+                setBuildField("MANUFACTURER", "GIONEE");
+                setBuildField("PRODUCT", "S11S");
+                setBuildField("MODEL", "GIONEE S11S");
+                setBuildField("DEVICE", "GIONEE_SW17G12");
+                setBuildField("FINGERPRINT", "GIONEE/S11S/GIONEE_SW17G12:7.1.1/N6F26Q/1509594663:user/release-keys");
                 return true;
             }
         }
