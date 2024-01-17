@@ -181,16 +181,30 @@ public class PixelPropsUtils {
 
                 dlog("Spoofing build for GMS");
                 // Alter build parameters to avoid hardware attestation enforcement
-                setBuildField("BRAND", "GIONEE");
-                setBuildField("MANUFACTURER", "GIONEE");
-                setBuildField("PRODUCT", "S11S");
-                setBuildField("MODEL", "GIONEE S11S");
-                setBuildField("DEVICE", "GIONEE_SW17G12");
-                setBuildField("FINGERPRINT", "GIONEE/S11S/GIONEE_SW17G12:7.1.1/N6F26Q/1509594663:user/release-keys");
+                setBuildField("BRAND", "Hisense");
+                setBuildField("MANUFACTURER", "Hisense");
+                setBuildField("DEVICE", "HS6735MT");
+                setBuildField("ID", "MRA58K");
+                setBuildField("FINGERPRINT", "Hisense/F30/HS6735MT:6.0/MRA58K/L1228.6.01.01:user/release-keys");
+                setBuildField("MODEL", "Hisense F30");
+                setBuildField("PRODUCT", "F30");
+                setVersionFieldString("SECURITY_PATCH", "2016-02-01");
                 return true;
             }
         }
         return false;
+    }
+
+    private static void setVersionFieldString(String key, String value) {
+        try {
+            if (DEBUG) Log.d(TAG, "Defining prop " + key + " to " + value);
+            Field field = Build.VERSION.class.getDeclaredField(key);
+            field.setAccessible(true);
+            field.set(null, value);
+            field.setAccessible(false);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            Log.e(TAG, "Failed to set prop " + key, e);
+        }
     }
 
     public static void setProps(String packageName) {
