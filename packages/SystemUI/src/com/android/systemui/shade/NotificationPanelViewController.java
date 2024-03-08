@@ -2580,8 +2580,7 @@ public final class NotificationPanelViewController implements Dumpable {
                 && !mKeyguardBypassController.getBypassEnabled()) {
             alpha *= mClockPositionResult.clockAlpha;
         }
-        float finalAlpha = alpha > 0.84f ? alpha : 0f;
-        mNotificationStackScrollLayoutController.setAlpha(finalAlpha);
+        mNotificationStackScrollLayoutController.setAlpha(alpha);
         if (mBarState != StatusBarState.KEYGUARD && !isFullyCollapsed() && !isPanelVisibleBecauseOfHeadsUp()) {
             mCentralSurfaces.updateDismissAllVisibility(true);
         }
