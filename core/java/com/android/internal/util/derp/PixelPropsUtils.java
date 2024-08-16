@@ -231,11 +231,11 @@ public class PixelPropsUtils {
         // Alter build parameters to avoid hardware attestation enforcement
         setPropValue("BRAND", "google");
         setPropValue("MANUFACTURER", "Google");
-        setPropValue("DEVICE", "cheetah");
+        setPropValue("DEVICE", "shiba");
         setPropValue("ID", "AP31.240617.009");
-        setPropValue("FINGERPRINT", "google/cheetah_beta/cheetah:15/AP31.240617.010/12136053:user/release-keys");
-        setPropValue("MODEL", "Pixel 7 Pro");
-        setPropValue("PRODUCT", "cheetah_beta");
+        setPropValue("FINGERPRINT", "google/shiba_beta/shiba:15/AP31.240617.009/12094726:user/release-keys");
+        setPropValue("MODEL", "Pixel 8");
+        setPropValue("PRODUCT", "shiba_beta");
         setVersionFieldString("SECURITY_PATCH", "2024-07-05");
     }
 
