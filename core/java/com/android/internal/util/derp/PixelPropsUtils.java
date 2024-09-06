@@ -53,10 +53,10 @@ public class PixelPropsUtils {
         propsToChangePixel9Pro = new HashMap<>();
         propsToChangePixel9Pro.put("BRAND", "google");
         propsToChangePixel9Pro.put("MANUFACTURER", "Google");
-        propsToChangePixel9Pro.put("DEVICE", "caiman");
-        propsToChangePixel9Pro.put("PRODUCT", "caiman");
-        propsToChangePixel9Pro.put("MODEL", "Pixel 9 Pro");
-        propsToChangePixel9Pro.put("FINGERPRINT", "google/caiman/caiman:14/AD1A.240530.047.U1/12150698:user/release-keys");
+        propsToChangePixel9Pro.put("DEVICE", "komodo");
+        propsToChangePixel9Pro.put("PRODUCT", "komodo");
+        propsToChangePixel9Pro.put("MODEL", "Pixel 9 Pro XL");
+        propsToChangePixel9Pro.put("FINGERPRINT", "google/komodo/komodo:14/AD1A.240905.004/12196292:user/release-keys");
         propsToChangePixelXL = new HashMap<>();
         propsToChangePixelXL.put("BRAND", "google");
         propsToChangePixelXL.put("MANUFACTURER", "Google");
@@ -229,10 +229,10 @@ public class PixelPropsUtils {
         // Alter build parameters to avoid hardware attestation enforcement
         setPropValue("BRAND", "google");
         setPropValue("MANUFACTURER", "Google");
-        setPropValue("DEVICE", "caiman");
-        setPropValue("FINGERPRINT", "google/caiman/caiman:14/AD1A.240530.047.U1/12150698:user/release-keys");
-        setPropValue("MODEL", "Pixel 9 Pro");
-        setPropValue("PRODUCT", "caiman");
+        setPropValue("DEVICE", "komodo");
+        setPropValue("FINGERPRINT", "google/komodo_beta/komodo:15/AP41.240726.010/12266677:user/release-keys");
+        setPropValue("MODEL", "Pixel 9 Pro XL");
+        setPropValue("PRODUCT", "komodo_beta");
     }
 
     private static boolean isCallerSafetyNet() {
