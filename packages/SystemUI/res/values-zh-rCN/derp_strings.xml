@@ -221,4 +221,7 @@
     <string name="app_picker_dialog_title">选择一个应用</string>
     <string name="active_edge_app_select_title">选择应用</string>
     <string name="active_edge_activity_select_title">选择活动</string>
+
+    <!-- Name of the firewall status bar icon. -->
+    <string name="status_bar_firewall">防火墙</string>
 </resources>
